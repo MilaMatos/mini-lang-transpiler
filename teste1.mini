@@ -1,4 +1,3 @@
-// Algoritmos: Fibonacci e Verificador de Primos
 def is_prime(n: int): bool {
     if (n <= 1) {
         return false;

@@ -1,4 +1,3 @@
-// Erros Sintaticos
 
 def calcular_media(a: real, b: real): real {
     var soma: real = a + b;
@@ -7,7 +6,6 @@ def calcular_media(a: real, b: real): real {
 
 var x: int = 10;
 
-// Erro: Faltando parentese de fechamento no while
 while (x > 0 {
     print x;
     set x = x - 1;
