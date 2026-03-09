@@ -1,0 +1,35 @@
+// Algoritmos: Fibonacci e Verificador de Primos
+def is_prime(n: int): bool {
+    if (n <= 1) {
+        return false;
+    }
+    
+    var i: int = 2;
+    while (i < n) {
+        var div: int = n / i;
+        if (n == div * i) {
+            return false;
+        }
+        set i = i + 1;
+    }
+    return true;
+}
+
+def fibonacci(n: int): int {
+    if (n <= 1) {
+        return n;
+    }
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+print "Teste 1: Algoritmos Complexos";
+
+var num: int = 7;
+if (is_prime(num)) {
+    print "7 e primo";
+} else {
+    print "7 nao e primo";
+}
+
+print "Fibonacci de 6:";
+print fibonacci(6);
