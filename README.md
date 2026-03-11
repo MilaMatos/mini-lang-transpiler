@@ -47,6 +47,16 @@ python lexer.py <arquivo.mini>
 
 **Saída esperada:** Uma lista estruturada contendo o tipo do token, seu valor literal e a linha onde foi encontrado. Exemplo: <INT, 'int'> (linha 1).
 
+### 2. Analisador Sintático (Parser)
+Responsável por receber a lista de tokens do Léxico e verificar se eles formam uma estrutura gramatical válida baseada na gramática BNF da Mini-Lang. Utiliza a abordagem Fail-Fast, interrompendo a compilação no primeiro erro estrutural encontrado e exibindo mensagens de erro formatadas.
+
+Para testar apenas o Scanner e visualizar a lista de tokens gerada, execute o comando abaixo no terminal:
+```bash
+python parser.py <arquivo.mini>
+```
+**Saída esperada:** Se a sintaxe estiver 100% correta, exibirá a **Árvore Sintática Abstrata (AST)** completa no formato JSON, contendo os nós e seus respectivos filhos em ordem hierárquica. Em caso de falha, exibirá a linha exata e a comparação entre o token esperado e o encontrado.
+
+
 ## CORE TEAM
 
 <table>
