@@ -33,6 +33,20 @@ O sistema segue o pipeline clássico de compilação, estruturado nas seguintes 
 
 ---
 
+## COMO EXECUTAR (TESTES ISOLADOS)
+
+O compilador foi projetado de forma modular. É possível testar o funcionamento de cada fase da compilação de maneira independente.
+
+### 1. Analisador Léxico (Scanner)
+Responsável por ler o código-fonte caractere por caractere, ignorar espaços e comentários, e agrupar os caracteres em **Tokens**. 
+
+Para testar apenas o Scanner e visualizar a lista de tokens gerada, execute o comando abaixo no terminal:
+```bash
+python lexer.py <arquivo.mini>
+```
+
+**Saída esperada:** Uma lista estruturada contendo o tipo do token, seu valor literal e a linha onde foi encontrado. Exemplo: <INT, 'int'> (linha 1).
+
 ## CORE TEAM
 
 <table>
