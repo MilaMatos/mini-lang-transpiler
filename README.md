@@ -67,3 +67,27 @@ python parser.py <arquivo.mini>
     <td align="center"><b>Vinícius Inácio dos Santos</b></td>
   </tr>
 </table>
+
+### 3. Análise Semântica
+Responsável por validar a **consistência lógica do programa** após a construção da Árvore Sintática Abstrata (AST). Nesta etapa são verificadas regras que não podem ser detectadas apenas pela gramática, como **declarações de variáveis, compatibilidade de tipos, escopo e chamadas de função**.
+
+O analisador semântico percorre a AST realizando uma **varredura estruturada** e utilizando uma **Tabela de Símbolos** para armazenar informações sobre variáveis e funções declaradas ao longo do código.
+
+Entre as verificações realizadas estão:
+
+- Uso de **variáveis não declaradas**
+- **Declaração duplicada** de variáveis no mesmo escopo
+- **Compatibilidade de tipos** em atribuições e expressões
+- Validação de **operadores matemáticos, relacionais e lógicos**
+- Verificação de **existência de funções**
+- Checagem de **quantidade e tipo de argumentos** em chamadas de função
+
+O sistema segue a abordagem **Fail-Fast**, interrompendo a compilação assim que um erro semântico é encontrado e exibindo uma mensagem contendo a linha e a descrição do problema.
+
+Para executar a análise semântica de forma isolada, utilize:
+
+```bash
+python symtable.py <arquivo.mini>
+```
+
+**Saída esperada:** Caso o programa seja semanticamente válido, a AST será considerada correta e poderá seguir para a fase de Geração de Código. Caso contrário, o compilador exibirá uma mensagem de Erro Semântico indicando a linha e a inconsistência detectada.
