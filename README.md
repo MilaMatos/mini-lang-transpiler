@@ -66,17 +66,7 @@ python parser.py <arquivo.mini>
 Responsável por validar a **consistência lógica do programa** após a construção da Árvore Sintática Abstrata (AST). Nesta etapa são verificadas regras que não podem ser detectadas apenas pela gramática, como **declarações de variáveis, compatibilidade de tipos, escopo e chamadas de função**.
 
 O analisador semântico percorre a AST realizando uma **varredura estruturada** e utilizando uma **Tabela de Símbolos** para armazenar informações sobre variáveis e funções declaradas ao longo do código.
-
-Entre as verificações realizadas estão:
-
-- Uso de **variáveis não declaradas**
-- **Declaração duplicada** de variáveis no mesmo escopo
-- **Compatibilidade de tipos** em atribuições e expressões
-- Validação de **operadores matemáticos, relacionais e lógicos**
-- Verificação de **existência de funções**
-- Checagem de **quantidade e tipo de argumentos** em chamadas de função
-
-O sistema segue a abordagem **Fail-Fast**, interrompendo a compilação assim que um erro semântico é encontrado e exibindo uma mensagem contendo a linha e a descrição do problema.
+O sistema segue a abordagem **Fail-Fast**, interrompendo a compilação assim que um erro é encontrado e exibindo uma mensagem contendo a linha e a descrição do problema.
 
 Para executar a análise semântica de forma isolada, utilize:
 
@@ -90,22 +80,7 @@ python symtable.py <arquivo.mini>
 
 Responsável por realizar a tradução da Árvore Sintática Abstrata (AST) validada para a linguagem de destino, neste caso, o Python.
 
-O gerador percorre a AST e converte cada nó em sua representação equivalente em Python, respeitando a estrutura e a semântica do programa original.
-
-Entre as construções suportadas estão:
-
-- Declaração e atribuição de variáveis
-- Expressões aritméticas (+, -, \*, //)
-- Expressões relacionais (==, !=, <, >, <=, >=)
-- Expressões lógicas (and, or, not)
-- Operadores unários (negação lógica e numérica)
-- Estruturas de controle (if, else, while)
-- Definição de funções (def)
-- Retorno de funções (return)
-- Chamadas de função
-- Comando de saída (print)
-
-Além disso, o gerador é responsável por manter a indentação correta do código Python, garantindo que o código gerado seja válido e executável.
+O gerador percorre a AST e converte cada nó em sua representação equivalente em Python, respeitando a estrutura e a semântica do programa original. Além disso, o gerador é responsável por manter a indentação correta do código Python, garantindo que o código gerado seja válido e executável.
 
 O arquivo **compilador.py** integra todas as etapas do compilador:
 
