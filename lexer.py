@@ -1,5 +1,6 @@
 from globals import TokenType, Token
 import globals
+import error
 
 class Lexer:
     def __init__(self, code):
@@ -71,7 +72,8 @@ class Lexer:
                     elif c == ';': return Token(TokenType.SEMI, c, self.line)
                     elif c == ':': return Token(TokenType.COLON, c, self.line)
                     elif c == ',': return Token(TokenType.COMMA, c, self.line)
-                    else: return Token(TokenType.ERROR, c, self.line)
+                    else: 
+                        error.lexical_error(self.line, c)
 
             elif state == "INSLASH":
                 if c == '/':
@@ -135,7 +137,8 @@ class Lexer:
                     save = False
                     if token_str == '<': return Token(TokenType.LT, "<", self.line)
                     elif token_str == '>': return Token(TokenType.GT, ">", self.line)
-                    else: return Token(TokenType.ERROR, token_str, self.line)
+                    else: 
+                        error.lexical_error(self.line, token_str)
 
             if save: token_str += c
             

@@ -6,6 +6,10 @@ class SyntaxErrors:
     INVALID_TYPE = "Tipo inválido. Esperado 'int', 'real', 'bool' ou 'void', encontrado '{0}'"
     INVALID_FACTOR = "Fator inválido na expressão. Encontrado: {0}"
 
+def lexical_error(linha, char):
+    print(f"Erro Léxico na linha {linha}: Caractere não reconhecido pela linguagem: '{char}'")
+    exit(1)
+
 def print_error(msg):
     print(f"Erro Sintático na linha {globals.lineno}: {msg}")
     exit(1)
