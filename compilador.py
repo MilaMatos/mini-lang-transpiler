@@ -19,14 +19,11 @@ def main():
         code = f.read()
 
     try:
-        # 1. Scanner e Parser integrados (gera a AST n-ária)
         lexer = Lexer(code)
         ast = parse(lexer)
 
-        # 2. Analisador Semântico
         SemanticAnalyzer().analyze(ast)
 
-        # 3. Gerador de Código
         python_code = Generator().generate(ast)
         print("\n===== CÓDIGO PYTHON GERADO =====\n")
         print(python_code)
@@ -36,7 +33,7 @@ def main():
         exec(python_code, env, env)
 
     except SystemExit:
-        pass # Erros já foram printados pelos módulos
+        pass
     except Exception as e:
         print(f"\n[ERRO INTERNO] {e}")
 

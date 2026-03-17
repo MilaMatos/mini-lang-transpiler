@@ -1,0 +1,25 @@
+// Casos Limites e Unarios 
+
+def matematica_estranha(): real {
+    var a: real = 5.0;
+    // Multiplos unarios negativos seguidos
+    var b: real = - - - 2.0; 
+    return a * b / (a + b);
+}
+
+def logica_reversa(flag: bool): bool {
+    // Multiplos unarios logicos
+    return not not not flag;
+}
+
+var a: int = 10;
+var b: int = 20;
+var c: int = 30;
+
+// Expressao relacional aninhada com and/or
+if (a < c) {
+    print "Logica avaliada com sucesso";
+}
+
+print matematica_estranha();
+print logica_reversa(true);
