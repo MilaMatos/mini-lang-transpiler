@@ -61,17 +61,6 @@ python parser.py <arquivo.mini>
 
 **Saída esperada:** Se a sintaxe estiver 100% correta, exibirá a **Árvore Sintática Abstrata (AST)** completa no formato JSON, contendo os nós e seus respectivos filhos em ordem hierárquica. Em caso de falha, exibirá a linha exata e a comparação entre o token esperado e o encontrado.
 
-## CORE TEAM
-
-<table>
-  <tr>
-    <td align="center"><b>Camila Vanessa de Matos Sousa</b></td>
-    <td align="center"><b>Dalton Gomes Lobato</b></td>
-    <td align="center"><b>Pedro Rafael Pereira de Oliveira</b></td>
-    <td align="center"><b>Vinícius Inácio dos Santos</b></td>
-  </tr>
-</table>
-
 ### 3. Análise Semântica
 
 Responsável por validar a **consistência lógica do programa** após a construção da Árvore Sintática Abstrata (AST). Nesta etapa são verificadas regras que não podem ser detectadas apenas pela gramática, como **declarações de variáveis, compatibilidade de tipos, escopo e chamadas de função**.
@@ -132,3 +121,16 @@ python compilador.py <arquivo.mini>
 ```
 
 **Saída esperada:** Caso o programa seja válido em todas as etapas anteriores, a AST será considerada correta e seguirá para a geração de código. O sistema exibirá o código Python gerado e realizará sua execução no próprio terminal. Em caso de erro em qualquer etapa, a execução é interrompida e uma mensagem descritiva é apresentada.
+
+---
+
+## CORE TEAM
+
+<table>
+  <tr>
+    <td align="center"><b>Camila Vanessa de Matos Sousa</b></td>
+    <td align="center"><b>Dalton Gomes Lobato</b></td>
+    <td align="center"><b>Pedro Rafael Pereira de Oliveira</b></td>
+    <td align="center"><b>Vinícius Inácio dos Santos</b></td>
+  </tr>
+</table>
