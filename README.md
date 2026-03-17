@@ -53,7 +53,7 @@ python lexer.py <arquivo.mini>
 
 Responsável por receber a lista de tokens do Léxico e verificar se eles formam uma estrutura gramatical válida baseada na gramática BNF da Mini-Lang. Utiliza a abordagem Fail-Fast, interrompendo a compilação no primeiro erro estrutural encontrado e exibindo mensagens de erro formatadas.
 
-Para testar apenas o Scanner e visualizar a lista de tokens gerada, execute o comando abaixo no terminal:
+Para testar apenas o Parser e visualizar a Árvore Sintática Abstrata (AST) em formato JSON, execute o comando abaixo no terminal:
 
 ```bash
 python parser.py <arquivo.mini>
