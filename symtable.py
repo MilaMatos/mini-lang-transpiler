@@ -107,3 +107,33 @@ class SemanticAnalyzer:
                 for i in range(len(args)):
                     if args[i] != f_info['params'][i]:
                         semantic_error(t.lineno, f"Argumento {i+1} da função '{t.attr}' tem tipo incompatível.")
+                        
+                        
+if __name__ == "__main__":
+    import sys
+    from lexer import Lexer
+    from parser import parse
+
+    if len(sys.argv) < 2:
+        print("Uso: python symtable.py <arquivo.mini>")
+    else:
+        with open(sys.argv[1], 'r', encoding='utf-8') as f:
+            code = f.read()
+
+        lexer = Lexer(code)
+        ast = parse(lexer)
+
+        analyzer = SemanticAnalyzer()
+        analyzer.analyze(ast)
+
+        print("\nTABELA DE SÍMBOLOS:\n")
+        
+        print("Funções Declaradas:")
+        for nome, dados in analyzer.symtab.funcs.items():
+            params = [p.name for p in dados['params']]
+            print(f"- {nome} -> Retorno: {dados['ret'].name} | Params: {params}")
+
+        print("\nVariáveis Globais:")
+        for nome, tipo in analyzer.symtab.scopes[0].items():
+            print(f"- {nome}: {tipo.name}")
+        print()
